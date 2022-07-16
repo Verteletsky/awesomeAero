@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--Подгрузка свободных мест для каждого ресторана, после ввода
+делаем запрос в бд для проверки доступности столика
+если доступен производим резерв-->
+<p>Введите количество персон:</p>
+<p><input type="number" name="countPerson"></p>
+
+{{$var := .Restaurants}}
+Выберите доступный ресторан<br><br>
+<select name="" id="" size="1">
+    {{range .Restaurants}}
+    <option value="">
+        <p>{{.Title}}</p>
+    </option>
+    {{else}}
+        Нет доступных ресторанов для брони
+    {{end}}
+</select>
+
+<p>Ваше имя:</p>
+<p><input type="text" name="nameUser"></p>
+
+<p>Номер телефона:</p>
+<p><input type="tel" name="phoneUser"></p>
+
+<button type="submit" title="" name="" disabled>Забронировать</button>
+
+</body>
+</html>
